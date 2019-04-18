@@ -16,11 +16,12 @@ describe('studentsModel', () => {
 			expect(newStudent.name).toBe('Ant');
 		});
 
-		it('insert two students into db', async () => {
+		it('insert 3 students into db', async () => {
 			const newStudent1 = await Students.insert({ name: 'Novi' });
 			const newStudent2 = await Students.insert({ name: 'Sam' });
+			const newStudent3 = await Students.insert({ name: 'Sammy' });
 			const allOfThem = await db('students');
-			expect(allOfThem).toHaveLength(2);
+			expect(allOfThem).toHaveLength(3);
 		});
 	});
 
